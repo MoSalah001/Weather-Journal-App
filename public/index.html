@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Journal App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Weather Journal App</h1>
+    </div>
+    <div id="main-div">
+        <input type="text" placeholder="enter zip code here ..." id="zip">
+        <textarea id="feelings" placeholder="How are you feeling today?.."></textarea>
+        <button id="generate">Generate</button>
+    </div>
+    <div class="error">
+        <p id="error"></p>
+    </div>
+    <section id="toggle">
+    <section id="row">
+    <div id="entryHolder" class="data">
+        <div id="date"></div>
+        <div id="temp"></div>
+        <div id="realFeel"></div>
+    </section>
+        <section id="column">
+            <div id="content">
+                <ul class="list-items">
+                    <li id="country"></li>
+                    <li id="cityName"></li>
+                    <li id="feeling"></li>
+                    <li id="weatherDesc"></li>
+                    <li id="maxTemp"></li>
+                    <li id="minTemp"></li>
+                    <li id="windSpeed"></li>
+                    <li id="humidity"></li>
+                    <li id="visibility"></li>
+                    <li id="pressure"></li>
+                    <li id="windDirection"></li>
+                    <li id="timezone"></li>
+                </ul>
+            </div>
+        </section>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>

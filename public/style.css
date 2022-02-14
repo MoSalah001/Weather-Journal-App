@@ -1,0 +1,199 @@
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+@media screen and (max-width: 798px) {
+    body {
+        background-color: rgb(105, 228, 236);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    div {
+        color: yellow;
+    }
+    h1 {
+        text-align: center;
+        color: palevioletred;
+    }
+    #main-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 95vw;
+    }
+
+    textarea {
+        resize: none;
+        width: 30vw;
+        margin: 1em;
+    }
+    input{
+        width: 30vw;
+    }
+
+    ul {
+        list-style: none;
+        display: grid;
+        grid-template-areas: 
+        'country city feel'
+        'weather weather weather'
+        'maxtemp mintemp windspeed'
+        'winddirection humidity visibility'
+        'pressure timezone timezone'
+        ;
+        columns: 3;
+        column-gap: 4em;
+    }
+
+    li {
+        margin-top:2em; 
+        color: red;
+    }
+
+    #error {
+        text-align: center;
+    }
+    
+    #row {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+    #entryHolder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width:100vw;
+    }
+    
+    #column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #weatherDesc {
+        font: 3em arial;
+        margin-top: 0.2em;
+        margin-left: 3em;
+    }
+
+    #snow {
+        background-image: url('weather/snow.jpg');
+        background-attachment: fixed;
+    }
+
+    #clouds {
+        background-image: url('weather/cloudy.jpg');
+        background-attachment: fixed;
+    }
+}
+@media screen and (max-width:500px) {
+    #weatherDesc {
+        font: 2em arial;
+        margin: 0.2em auto;
+    }
+    ul {
+        padding-inline-start: 10px;
+        column-gap: 1em;
+    }
+}
+
+@media screen and (min-width :799px) {
+    body {
+        background-color: rgb(105, 228, 236);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-size: 1.3em;
+    }
+    div {
+        color: yellow;
+    }
+    h1 {
+        text-align: center;
+        color: palevioletred;
+    }
+    #main-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 95vw;
+    }
+
+    textarea {
+        resize: none;
+        width: 30vw;
+        margin: 1em;
+        border-radius: 5px;
+    }
+    input{
+        width: 30vw;
+        border-radius: 5px;
+    }
+
+    ul {
+        list-style: none;
+        display: grid;
+        grid-template-areas: 
+        'country city feel'
+        'weather weather weather'
+        'maxtemp mintemp windspeed'
+        'winddirection humidity visibility'
+        'pressure timezone timezone'
+        ;
+        columns: 3;
+        column-gap: 4em;
+    }
+
+    li {
+        margin-top:2em; 
+        color: red;
+    }
+
+    #error {
+        text-align: center;
+    }
+    
+    #row {
+        display: flex;
+        flex-direction: row;
+        width: 98.4vw;
+    }
+    #entryHolder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width:100vw;
+    }
+    
+    #column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #weatherDesc {
+        font: 3em arial;
+        margin: 0.2em auto;
+    }
+
+    #snow {
+        background-image: url('weather/snow.jpg');
+        background-attachment: fixed;
+    }
+
+    #clouds {
+        background-image: url('weather/cloudy.jpg');
+        background-attachment: fixed;
+    }
+    button {
+        color: blue;
+        border-radius: 20px;
+        font-size: 0.8em;
+    }
+        
+}
