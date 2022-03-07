@@ -1,5 +1,5 @@
 const baseApiUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
-const apiKey = '&appid=7f13bd553d3fcb48f54db5ec8ac0ad7c&units=imperial';
+const apiKey = process.env.APP;
 let appBtn = document.getElementById('generate');
 const feel = document.getElementById('feelings');
 let hider = document.getElementById('toggle');
