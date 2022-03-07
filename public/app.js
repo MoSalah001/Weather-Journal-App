@@ -1,8 +1,9 @@
-const baseApiUrl = "http://api.openweathermap.org/data/2.5/weather?zip=";
+const baseApiUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
 const apiKey = '&appid=7f13bd553d3fcb48f54db5ec8ac0ad7c&units=imperial';
 let appBtn = document.getElementById('generate');
 const feel = document.getElementById('feelings');
 let hider = document.getElementById('toggle');
+let herokuHost = "https://openweather-app-demo.herokuapp.com";
 
 appBtn.addEventListener('click',getZipCode);
 
@@ -45,7 +46,7 @@ const getApiData = async (baseApiUrl,inputData,apiKey,feeling)=>{
 const sendToServer = async (dataObj)=>{
     hider.className='';
     hider.classList.add('show');
-    await fetch('http://127.0.0.1:5000/addData',{
+    await fetch(herokuHost+'/addData',{
             method : "POST",
             body:JSON.stringify(dataObj),
             headers:{
@@ -56,7 +57,7 @@ const sendToServer = async (dataObj)=>{
 }
 
 const serverData = async()=>{
-    const callData = await fetch('http://127.0.0.1:5000/getData');
+    const callData = await fetch(herokuHost+'/getData');
     const data = await callData.json();
     showData(data);
 }
