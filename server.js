@@ -3,7 +3,8 @@ const server = express();
 const cors = require('cors');
 const bp = require('body-parser');
 
-const port = 5000;
+let port = process.env.PORT || 5000;
+let host = process.env.HOST || '0.0.0.0';
 
 projectData ={
     
@@ -12,12 +13,16 @@ projectData ={
 server.use(cors());
 server.use(bp.urlencoded({ extended: false }));
 server.use(bp.json());
-server.listen(port,startServer);
+server.listen(port,host,startServer);
 server.use(express.static('public'));
 
 function startServer(){
-    console.log(`server is running on port:${port}`);
+    console.log("listening on port %d",port,host);
 }
+
+server.get('/',(req,res)=>{
+    res.sendFile('./public/index.html')
+})
 
 server.get('/getData',(req,res)=>{
     res.send(projectData);
