@@ -66,8 +66,8 @@ function showData(obj){
     console.log(obj.weather);
     const date = new Date();
     document.getElementById('date').innerHTML = `Date: ${date.getDate()} / ${date.getMonth()+1} / ${date.getFullYear()}`;
-    document.getElementById('temp').textContent =`Current temp: `+obj.currentTemp;
-    document.getElementById('realFeel').textContent =`Feels like: `+obj.feelsLike;
+    document.getElementById('temp').textContent =`Current temp: `+obj.currentTemp+' °C';
+    document.getElementById('realFeel').textContent =`Feels like: `+obj.feelsLike+' °C';
     let country = document.getElementById('country');
     country.textContent =`Country: `+obj.country;
     country.style.gridArea = "country";
@@ -80,8 +80,8 @@ function showData(obj){
     let weather = document.getElementById('weatherDesc');
     weather.textContent =`Weather: `+obj.weatherDesc;
     weather.style.gridArea = "weather";
-    document.getElementById('maxTemp').textContent =`Max Temp: `+obj.maxTemp;
-    document.getElementById('minTemp').textContent =`Min Temp: `+obj.minTemp;
+    document.getElementById('maxTemp').textContent =`Max Temp: `+obj.maxTemp+' °C';
+    document.getElementById('minTemp').textContent =`Min Temp: `+obj.minTemp+' °C';
     document.getElementById('windSpeed').textContent =`Wind Speed: `+obj.windSpeed;
     document.getElementById('humidity').textContent =`Humidity: `+obj.humidity;
     document.getElementById('visibility').textContent =`Visibility: `+obj.visibility;
