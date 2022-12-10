@@ -9,7 +9,7 @@ http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country
 let appBtn = document.getElementById('generate');
 const feel = document.getElementById('feelings');
 let hider = document.getElementById('toggle');
-let hostUrl = __dirname;
+let hostUrl = window.location.origin;
 
 appBtn.addEventListener('click',getZipCode);
 
