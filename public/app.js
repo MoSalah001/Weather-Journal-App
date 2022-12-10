@@ -1,9 +1,15 @@
 const baseApiUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
-const apiKey = "&appid=7f13bd553d3fcb48f54db5ec8ac0ad7c&units=imperial";
+const apiKey = process.env.WEATHER_API;
+
+/* api to get geo location
+"https://api.openweathermap.org/data/2.5/weather?zip="; // old api
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key} // new api
+http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit=5&appid=7f13bd553d3fcb48f54db5ec8ac0ad7c
+*/
 let appBtn = document.getElementById('generate');
 const feel = document.getElementById('feelings');
 let hider = document.getElementById('toggle');
-let herokuHost = "https://openweather-app-demo.herokuapp.com";
+let hostUrl = __dirname;
 
 appBtn.addEventListener('click',getZipCode);
 
@@ -46,7 +52,7 @@ const getApiData = async (baseApiUrl,inputData,apiKey,feeling)=>{
 const sendToServer = async (dataObj)=>{
     hider.className='';
     hider.classList.add('show');
-    await fetch(herokuHost+'/addData',{
+    await fetch(hostUrl+'/addData',{
             method : "POST",
             body:JSON.stringify(dataObj),
             headers:{
@@ -57,7 +63,7 @@ const sendToServer = async (dataObj)=>{
 }
 
 const serverData = async()=>{
-    const callData = await fetch(herokuHost+'/getData');
+    const callData = await fetch(hostUrl+'/getData');
     const data = await callData.json();
     showData(data);
 }
