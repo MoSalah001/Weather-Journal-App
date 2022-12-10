@@ -2,6 +2,7 @@ const express = require('express');
 const server = express();
 const cors = require('cors');
 const bp = require('body-parser');
+const apiKey = process.env.WEATHER_API;
 
 let port = process.env.PORT || 5000;
 let host = process.env.HOST || '0.0.0.0';
